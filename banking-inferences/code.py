@@ -34,7 +34,7 @@ data=pd.read_csv(path)
 data_sample = data.sample(n=sample_size, random_state=0)
 
 sample_mean = data_sample['installment'].mean()
-population_std = data_sample['installment'].std()
+population_std = data['installment'].std()
 
 margin_of_error = z_critical * (population_std/math.sqrt(sample_size))
 
@@ -85,7 +85,7 @@ print('-------------------------------')
 x1 = data[data['paid.back.loan']=='No']['installment']
 x2 = data[data['paid.back.loan']=='Yes']['installment']
 
-z_statistic_2, p_value_2 = 4.89, 9.85182562491764e-07 #ztest(x1, value=x2.mean())
+z_statistic_2, p_value_2 = ztest(x1, value=x2.mean())
 print('z-statisic 2: ', z_statistic_2)
 print('p-value 2: ', p_value_2)
 
@@ -112,7 +112,3 @@ if chi2 > critical_value:
     print('Conlusion: Here, Chi-square statistic exceeds the critical value, hence we have enough evidence to reject the null hypothesis.')
 else:
     print('Conlusion: Here, Chi-square statistic does not exceed the critical value, hence we do not have enough evidence to reject the null hypothesis.')
-
-
-
-
