@@ -1,10 +1,6 @@
 
 
 
-## Data Science Projects
+## Statistics and Data Analysis
 
-This is the collection of GreyAtom Data Science projects.
-The folders in this repository will cotain files required for the project:
-
-* **Data:** This folder will contain the required data.
-* **Notebook:** This folder will contain jupyter notebook.
+This is the collection of codes of statistics and data analysis.
